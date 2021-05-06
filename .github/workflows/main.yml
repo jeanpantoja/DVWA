@@ -1,0 +1,26 @@
+name: CI
+on:
+ push:
+   branches: [ master ]
+ pull_request:
+   branches: [ master ]
+
+jobs:
+ conviso-sast:
+   runs-on: ubuntu-latest
+   container:
+     image: convisoappsec/flowcli
+     env:
+       FLOW_API_KEY:  ${{secrets.FLOW_API_KEY}}
+       FLOW_PROJECT_CODE: "ehh0GdDDvo4ZKLSI"
+   steps:
+   - uses: actions/checkout@v2
+
+   - name: Run SAST
+     run: flow sast run
+     
+   - name: Run SCA
+     run: flow sca run
+     
+   - name: Continous Codereview
+     run: flow deploy create with tag-tracker sort-by time
