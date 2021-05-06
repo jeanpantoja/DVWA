@@ -22,5 +22,5 @@ jobs:
    - name: Run SCA
      run: flow sca run
      
-   - name: Continous Codereview
-     run: flow deploy create with tag-tracker sort-by time
+   - name: Codereview
+     run: flow deploy create with values
