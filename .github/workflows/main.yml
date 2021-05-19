@@ -12,15 +12,9 @@ jobs:
      image: convisoappsec/flowcli
      env:
        FLOW_API_KEY:  ${{secrets.FLOW_API_KEY}}
-       FLOW_PROJECT_CODE: "iOntA9-sGFiQm32Q"
+       FLOW_PROJECT_CODE: "JxSCm7BnO8uIpYgN"
    steps:
    - uses: actions/checkout@v2
 
    - name: Run SAST
      run: flow sast run
-     
-   - name: Run SCA
-     run: flow sca run
-     
-   - name: Codereview
-     run: flow deploy create with values
