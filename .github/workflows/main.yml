@@ -12,6 +12,6 @@ jobs:
    steps:
    - uses: actions/checkout@v2
    - name: Run Flow SAST
-     run: flow sast run --project-code "-e57LYLLdul2CLNi"
+     run: flow sast run --project-code "WDmhjRB_qGoJvG1y"
    - name: Run Flow SCA
-     run: flow sca run --project-code "-e57LYLLdul2CLNi" -v INFO
+     run: flow sca run --project-code "WDmhjRB_qGoJvG1y" -v INFO
