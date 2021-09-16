@@ -1,10 +1,7 @@
-name: CI
+name: Deploy pygoat
 on:
- push:
-   branches: [ master ]
- pull_request:
-   branches: [ master ]
-
+  push:
+    branches: [ master ]
 jobs:
  conviso:
    runs-on: ubuntu-latest
@@ -12,12 +9,9 @@ jobs:
      image: convisoappsec/flowcli
      env:
        FLOW_API_KEY:  ${{secrets.FLOW_API_KEY}}
-       FLOW_PROJECT_CODE: "LMNT2Mt0ka3YmZWM"
    steps:
    - uses: actions/checkout@v2
-
-   - name: Run SAST
-     run: flow sast run
-   
-   - name: Security Gate Validation
-     run: flow vulnerability assert-security-rules --rules-file rules.yml
+   - name: Run Flow SAST
+     run: flow sast run --project-code "-e57LYLLdul2CLNi"
+   - name: Run Flow SCA
+     run: flow sca run --project-code "-e57LYLLdul2CLNi" -v INFO
