@@ -5,7 +5,7 @@ on:
 jobs:
  conviso:
    runs-on:
-     - self-hosted
+     - convisoappsec
 
    container:
      image: convisoappsec/flowcli
