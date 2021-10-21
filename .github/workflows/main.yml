@@ -3,7 +3,7 @@ on:
   push:
     branches: [ master ]
 jobs:
-  conviso:
+  conviso_production:
     runs-on:
       - convisoappsec
     container:
@@ -17,4 +17,3 @@ jobs:
         run: flow sast run
       - name: Run Flow SCA
         run: flow sca run -v INFO
-
