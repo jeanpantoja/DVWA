@@ -17,3 +17,21 @@ jobs:
         run: flow sast run
       - name: Run Flow SCA
         run: flow sca run -v INFO
+
+  conviso_k8s_staging:
+    runs-on:
+      - convisoappsec
+    container:
+      image: convisoappsec/flowcli
+      env:
+        FLOW_API_URL: https://flow-saas.staging.convisoappsec.com
+        FLOW_API_KEY:  ${{ secrets.FLOW_API_KEY_K8S_STAGING }}
+        FLOW_PROJECT_CODE: 4z7QeQ11XGcxLNIS
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run Flow SAST
+        run: flow sast run
+
+      - name: Run Flow SCA
+        run: flow sca run -v INFO
