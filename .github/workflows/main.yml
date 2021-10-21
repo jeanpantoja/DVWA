@@ -3,17 +3,18 @@ on:
   push:
     branches: [ master ]
 jobs:
- conviso:
-   runs-on:
-     - convisoappsec
+  conviso:
+    runs-on:
+      - convisoappsec
+    container:
+      image: convisoappsec/flowcli
+      env:
+        FLOW_API_KEY:  ${{ secrets.FLOW_API_KEY }}
+        FLOW_PROJECT_CODE: WDmhjRB_qGoJvG1y
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run Flow SAST
+        run: flow sast run
+      - name: Run Flow SCA
+        run: flow sca run -v INFO
 
-   container:
-     image: convisoappsec/flowcli
-     env:
-       FLOW_API_KEY:  ${{secrets.FLOW_API_KEY}}
-   steps:
-   - uses: actions/checkout@v2
-   - name: Run Flow SAST
-     run: flow sast run --project-code "WDmhjRB_qGoJvG1y"
-   - name: Run Flow SCA
-     run: flow sca run --project-code "WDmhjRB_qGoJvG1y" -v INFO
