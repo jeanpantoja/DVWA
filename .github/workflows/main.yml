@@ -32,6 +32,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Run Flow Deploy to send src to codereview
+        run: flow deploy create -f env_vars with values
+
       - name: Run Flow SAST
         run: flow sast run
 
