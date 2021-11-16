@@ -37,6 +37,8 @@ jobs:
 
       - name: Run Flow SAST
         run: flow sast run
+        env:
+          FLOW_SASTBOX_TAG: 1.7.6-rc.0
 
       - name: Run Flow SCA
         run: flow sca run -v INFO
