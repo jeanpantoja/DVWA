@@ -20,26 +20,26 @@ jobs:
       - name: Run Flow SCA
         run: flow sca run -v INFO
 
-  conviso_k8s_staging:
-    runs-on:
-      - convisoappsec
-    container:
-      image: convisoappsec/flowcli
-      env:
-        FLOW_API_URL: https://staging.convisoappsec.com
-        FLOW_API_KEY: ${{ secrets.FLOW_API_KEY_K8S_STAGING }}
-        FLOW_PROJECT_CODE: P3AKhlJ_ZepYnZB6
-    steps:
-      - uses: actions/checkout@v2
+#  conviso_k8s_staging:
+#    runs-on:
+#      - convisoappsec
+#    container:
+#      image: convisoappsec/flowcli
+#      env:
+#        FLOW_API_URL: https://staging.convisoappsec.com
+#        FLOW_API_KEY: ${{ secrets.FLOW_API_KEY_K8S_STAGING }}
+#        FLOW_PROJECT_CODE: P3AKhlJ_ZepYnZB6
+#    steps:
+#      - uses: actions/checkout@v2
 
-      - name: Run Flow Deploy to send src to codereview
-        run: flow deploy create -f env_vars with values
+#      - name: Run Flow Deploy to send src to codereview
+#        run: flow deploy create -f env_vars with values
 
-      - name: Run Flow SAST
-        run: flow sast run
+#      - name: Run Flow SAST
+#        run: flow sast run
 
-      - name: Run Flow SCA
-        run: flow sca run -v INFO
+#      - name: Run Flow SCA
+#        run: flow sca run -v INFO
 
   conviso_ec2_staging_01:
     runs-on:
@@ -62,23 +62,23 @@ jobs:
       - name: Run Flow SCA
         run: flow sca run -v INFO
 
-  conviso_ec2_staging_02:
-    runs-on:
-      - convisoappsec
-    container:
-      image: convisoappsec/flowcli
-      env:
-        FLOW_API_URL: https://homologa.convisoappsec.com
-        FLOW_API_KEY: ${{ secrets.FLOW_API_KEY_EC2_STAGING }}
-        FLOW_PROJECT_CODE: P3AKhlJ_ZepYnZB6
-    steps:
-      - uses: actions/checkout@v2
+#  conviso_ec2_staging_02:
+#    runs-on:
+#      - convisoappsec
+#    container:
+#      image: convisoappsec/flowcli
+#      env:
+#        FLOW_API_URL: https://homologa.convisoappsec.com
+#        FLOW_API_KEY: ${{ secrets.FLOW_API_KEY_EC2_STAGING }}
+#        FLOW_PROJECT_CODE: P3AKhlJ_ZepYnZB6
+#    steps:
+#      - uses: actions/checkout@v2
 
-      - name: Run Flow Deploy to send src to codereview
-        run: flow deploy create -f env_vars with values
+#      - name: Run Flow Deploy to send src to codereview
+#        run: flow deploy create -f env_vars with values
 
-      - name: Run Flow SAST
-        run: flow sast run
+#      - name: Run Flow SAST
+#        run: flow sast run
 
-      - name: Run Flow SCA
-        run: flow sca run -v INFO
+#      - name: Run Flow SCA
+#        run: flow sca run -v INFO
