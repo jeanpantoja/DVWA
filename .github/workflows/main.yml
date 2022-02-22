@@ -10,7 +10,8 @@ jobs:
       image: convisoappsec/flowcli
       env:
         FLOW_API_KEY: ${{ secrets.FLOW_API_KEY }}
-        FLOW_PROJECT_CODE: WDmhjRB_qGoJvG1y
+        #FLOW_PROJECT_CODE: WDmhjRB_qGoJvG1y
+        FLOW_PROJECT_CODE: meleca
     steps:
       - uses: actions/checkout@v2
 
