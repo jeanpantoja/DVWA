@@ -7,7 +7,7 @@ jobs:
     runs-on:
       - convisoappsec
     container:
-      image: convisoappsec/flowcli
+      image: convisoappsec/flowcli:1.10.1-rc.7
       env:
         FLOW_API_KEY: ${{ secrets.FLOW_API_KEY }}
         #FLOW_PROJECT_CODE: WDmhjRB_qGoJvG1y
