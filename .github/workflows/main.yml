@@ -10,7 +10,7 @@ jobs:
       image: convisoappsec/convisocli:1.10.2-rc.1
       env:
         FLOW_API_KEY: ${{ secrets.FLOW_API_KEY }}
-        FLOW_PROJECT_CODE: Yi2M-4Y_WhBgUgcw
+        FLOW_PROJECT_CODE: U1FszD2IYCWPLnp2
     steps:
       - uses: actions/checkout@v2
 
