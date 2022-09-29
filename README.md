@@ -350,5 +350,4 @@ Homepage: <http://www.dvwa.co.uk/>
 Project Home: <https://github.com/digininja/DVWA>
 
 *Created by the DVWA team*
-*meleca team*
 
